@@ -26,6 +26,11 @@ body {
   font-size: 20px;
 }
 
+
+.font-24px {
+  font-size: 24px;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -86,6 +91,15 @@ body {
 .padder {
   padding: 8px;
 }
+
+.padder-16 {
+  padding: 16px 0;
+}
+
+.padder-20 {
+  padding: 20px;
+}
+
 
 .height-10px {
   height: 10px;

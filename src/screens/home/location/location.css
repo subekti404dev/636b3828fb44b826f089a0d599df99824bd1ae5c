@@ -1,32 +1,54 @@
-.location-header {
+.close-container {
  display: flex;
- flex: 1;
- height: 60px;
- flex-direction: row;
+ justify-content: flex-end;
+ padding: 12px 12px 0 0;
 }
 
-.location-header > .left {
+.city-item {
+ height: 50px;
+ display: flex;
+ align-items: center;
+ padding: 0px 20px;
+ cursor: pointer;
+}
+
+.icon-close {
+ width: 35px;
+}
+
+.icon-point {
+ width: 25px;
+}
+
+.city-name {
+ border-bottom: 1px solid #dedede;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ padding: 0 10px;
+}
+
+.city-icon-container {
+  background-color: #F1F1F2;
+  padding: 5px;
+  border-radius: 50px;
+  height: 28px;
+  width: 28px;
   display: flex;
-  width: 60px;
   justify-content: center;
   align-items: center;
- }
- 
+  margin-right: 10px;
+}
 
-.location-header > .right {
+.input-container {
+  padding: 10px 20px;
+}
+
+.input {
+  height: 50px;
   display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  padding-left: 10px;
-  margin-right: 60px;
- }
-
- .city {
-   height: 50px;
-   display: flex;
-   align-items: center;
-   padding: 0px 30px;
-   border-bottom: 1px solid #dedede;
-   cursor: pointer;
- }
+  width: calc(100% - 50px);
+  border-radius: 10px;
+  border: 1px solid #dedede;
+  padding-left: 50px;
+}

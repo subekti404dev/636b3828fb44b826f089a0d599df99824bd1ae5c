@@ -4,12 +4,12 @@ import icons from '../../../assets/icons'
 import LocationModal from '../location/location';
 
 const locations = [
-  "Jakarta",
-  "Bandung",
-  "Semarang",
-  "Yogyakarta",
-  "Surabaya",
-  "Bali"
+  "Nasi Goreng Mafia",
+  "Ayam Bang Dava",
+  "Warung Steak",
+  "Geprek Bensu",
+  "Ngikan",
+  "Nasi Bakar"
 ];
 
 const Header = (props) => {
