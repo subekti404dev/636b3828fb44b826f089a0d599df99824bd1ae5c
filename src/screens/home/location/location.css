@@ -1,0 +1,32 @@
+.location-header {
+ display: flex;
+ flex: 1;
+ height: 60px;
+ flex-direction: row;
+}
+
+.location-header > .left {
+  display: flex;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+
+.location-header > .right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  margin-right: 60px;
+ }
+
+ .city {
+   height: 50px;
+   display: flex;
+   align-items: center;
+   padding: 0px 30px;
+   border-bottom: 1px solid #dedede;
+   cursor: pointer;
+ }

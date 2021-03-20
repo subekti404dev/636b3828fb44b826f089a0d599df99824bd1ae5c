@@ -1,0 +1,31 @@
+.header {
+ display: flex;
+ flex: 1;
+ height: 60px;
+ flex-direction: row;
+}
+
+.header > .left {
+ display: flex;
+ width: 60px;
+ justify-content: center;
+ align-items: center;
+}
+
+.header > .right {
+ display: flex;
+ flex-direction: column;
+ flex: 1;
+ justify-content: center;
+ padding-left: 10px;
+}
+
+.icon-back {
+ width: 35px;
+}
+
+.icon-arrow-down {
+ margin-top: -2px;
+ width: 30px;
+ height: 28px;
+}
