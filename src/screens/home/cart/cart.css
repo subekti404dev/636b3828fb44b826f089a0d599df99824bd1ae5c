@@ -1,0 +1,21 @@
+.cart-container {
+ position: absolute;
+ bottom: 0;
+ background-color: #9f342f;
+ width: calc(100% - 20px);
+ margin: 10px;
+ height: 60px;
+ border-radius: 8px;
+ color: #fff;
+ cursor: pointer;
+}
+
+.icon-cart {
+  width: 28px;
+  height: 30px;
+}
+
+.icon-arrow-right {
+  width: 25px;
+  height: 25px;
+}

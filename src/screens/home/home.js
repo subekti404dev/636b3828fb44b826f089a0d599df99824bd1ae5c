@@ -4,6 +4,7 @@ import Header from './header/header';
 import DatePicker from './date-picker/date-picker';
 import ButtonGroup from './button-group/button-group';
 import Content from './content/content';
+import Cart from './cart/cart';
 
 const Home = (props) => {
   const [activeSwitchIndex, selectedSwitchIndex] = React.useState(0);
@@ -17,6 +18,7 @@ const Home = (props) => {
         onChange={selectedSwitchIndex}
       />
       <Content />
+      <Cart />
     </div>
   )
 }
