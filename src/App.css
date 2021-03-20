@@ -80,6 +80,7 @@ body {
 
 .pointer {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .padder {
