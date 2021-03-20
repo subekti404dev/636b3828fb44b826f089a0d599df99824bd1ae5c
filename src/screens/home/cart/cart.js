@@ -8,8 +8,11 @@ import { idr } from '../../../utils/idr.util';
 const Cart = (props) => {
   const {items} = useSelector(state => state.cart);
   const total = _.sumBy(items, 'price');
+  const visible = items.length > 0;
+  const style = {};
+  if (!visible) style['display'] = 'none';
   return (
-    <div className="cart-container">
+    <div className="cart-container" style={style}>
       <div className="padder">
         <div className="row">
           <div className="flex-1 column justify-center">
