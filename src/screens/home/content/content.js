@@ -1,10 +1,11 @@
 import React from 'react';
 import './content.css';
 import icons from '../../../assets/icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ADD_TO_CART } from '../../../redux/actions/cart.action';
 import { idr } from '../../../utils/idr.util'
 import RatingStar from '../../../shared/rating-star';
+import { HIDE_MODE, SHOW_MODE } from '../../../redux/actions/mode.action';
 
 const items = [
   {
@@ -56,14 +57,47 @@ const items = [
 
 const Content = (props) => {
   const dispatch = useDispatch();
+  const mode = useSelector(state => state.mode);
+  const [lastPosition, setLastPosition] = React.useState(0)
+
+  const listener = (_e) => {
+    const element = document.getElementById("item-0");
+    const position = (element.getBoundingClientRect()).top;
+
+    if (position > lastPosition) {
+      if (!mode.show) {
+        dispatch({ type: SHOW_MODE })
+      }
+    }
+    else {
+      if (mode.show) {
+        dispatch({ type: HIDE_MODE })
+      }
+    }
+    setLastPosition(position);
+  }
+
+  React.useEffect(() => {
+    const element = document.getElementById("content");
+    element.addEventListener('scroll', listener);
+    return () => {
+      element.removeEventListener('scroll', listener);
+    };
+  });
+
+  const style = {
+    height: `calc(100% - ${mode.show ? 185 : 130}px)`
+  };
+
   return (
-    <div className="content">
+    <div className="content" style={style} id="content">
       {items.map((item, index) => {
         const onAddToCart = () => {
           dispatch({ type: ADD_TO_CART, payload: item })
         }
         return (
           <div
+            id={`item-${index}`}
             key={index}
             className="item shadow">
             <div className="img-container">
@@ -95,7 +129,7 @@ const Content = (props) => {
           </div>
         )
       })}
-      <div className="height-30px"></div>
+      <div className="height-60px"></div>
     </div>
   )
 }
