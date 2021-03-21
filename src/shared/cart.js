@@ -11,7 +11,7 @@ const CartContainer = styled.div`
   background-color: #9f342f;
   width: calc(100% - 36px);
   margin: 10px;
-  height: 48px;
+  height: 40px;
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
@@ -26,7 +26,7 @@ const Row = styled.div`
 
 const Left = styled.div`
   display: flex;
-  flex: 2;
+  flex: 3;
   flex-direction: column;
   justify-content: center;
 `
