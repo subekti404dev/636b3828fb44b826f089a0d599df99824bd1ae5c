@@ -15,10 +15,10 @@ const RatingStar = ({ value }) => {
   const hasStartHalf = (value - starQty) > 0;
   const stars = []
   for (let i = 0; i < starQty; i++) {
-    stars.push(<Star />)
+    stars.push(<Star key={i} />)
   }
   if (hasStartHalf) {
-    stars.push(<HalfStar />)
+    stars.push(<HalfStar key={'half'} />)
   }
   return (
     <Container>

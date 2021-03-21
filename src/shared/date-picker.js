@@ -45,7 +45,7 @@ const DateContainer = styled.div`
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   background-color: ${props => props.isActive ? "#424749" : "#FFF"};
-  color: ${props => props.isActive ? "#FFF" : "#424749"};
+  color: ${props => props.isActive ? "#FFF" : props.disabled ? "#D9DCE0" : "#424749"};
   border-radius: ${props => props.isActive ? "30px" : "0px"};
 `
 
@@ -68,16 +68,20 @@ const DatePickerContainer = styled.div`
 `
 
 const DatePicker = (props) => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = React.useState(2);
   return (
     <DatePickerContainer>
       {dates.map((d, index) => {
         const isActive = index === activeIndex;
+        const isDisabled = d.day === 'SAB' || d.day === 'MIN';
         return (
           <DateContainer
             key={index}
+            disabled={isDisabled}
             isActive={isActive}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => {
+              if (!isDisabled) setActiveIndex(index)
+            }}
           >
             <Day>{d.day}</Day>
             <Date>{d.date}</Date>
