@@ -1,5 +1,5 @@
-import React from 'react';
-import './date-picker.css';
+import React from 'react'
+import styled from "styled-components";
 
 const dates = [
   { date: 1, day: 'SAB' },
@@ -34,29 +34,57 @@ const dates = [
   { date: 30, day: 'MIN' },
 ];
 
+const DateContainer = styled.div`
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  min-width: 55px;
+  margin-right: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  background-color: ${props => props.isActive ? "#424749" : "#FFF"};
+  color: ${props => props.isActive ? "#FFF" : "#424749"};
+  border-radius: ${props => props.isActive ? "30px" : "0px"};
+`
 
+const Day = styled.div`
+  font-size: 12px;
+`
+
+const Date = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+`
+
+const DatePickerContainer = styled.div`
+  height: 60px;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  padding-bottom: 4px;
+  overflow-x: scroll;
+  padding: 4px;
+`
 
 const DatePicker = (props) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   return (
-    <div className="date-picker">
+    <DatePickerContainer>
       {dates.map((d, index) => {
-        const classNames = ["date", "pointer"];
         const isActive = index === activeIndex;
-        isActive && classNames.push("date-active");
         return (
-          <div
+          <DateContainer
             key={index}
-            className={classNames.join(" ")}
+            isActive={isActive}
             onClick={() => setActiveIndex(index)}
           >
-            <div className="font-12px">{d.day}</div>
-            <div className="font-20px bold">{d.date}</div>
-          </div>
+            <Day>{d.day}</Day>
+            <Date>{d.date}</Date>
+          </DateContainer>
         )
       })}
-    </div>
-
+    </DatePickerContainer>
   )
 }
 

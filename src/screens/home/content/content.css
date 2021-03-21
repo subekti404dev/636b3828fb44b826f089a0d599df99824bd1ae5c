@@ -3,7 +3,7 @@
   padding-left: 8px;
   padding-right: 8px;
   overflow-y: scroll;
-  height: calc(100vh - 202px);
+  height: calc(100vh - 185px);
  }
  
  .content > .item {
@@ -44,14 +44,6 @@
  .icon-plus {
    width: 20px;
  }
-
- .icon-star {
-  width: 20px;
-}
-
-.rating-star {
-  margin: 0px 5px;
-}
 
 .rating-number {
   font-weight: bold;

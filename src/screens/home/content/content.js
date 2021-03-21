@@ -4,6 +4,7 @@ import icons from '../../../assets/icons';
 import { useDispatch } from 'react-redux';
 import { ADD_TO_CART } from '../../../redux/actions/cart.action';
 import { idr } from '../../../utils/idr.util'
+import RatingStar from '../../../shared/rating-star';
 
 const items = [
   {
@@ -71,7 +72,7 @@ const Content = (props) => {
             <div className="description">
               <div className="rating font-14px row">
                 <div className="rating-number">{item.rating}</div>
-                <RatingStar rate={item.rating} />
+                <RatingStar value={item.rating} />
               </div>
               <div className="name font-16px bold">{item.name}</div>
               <div className="by font-12px">{`by ${item.by}. ${item.outlet}`}</div>
@@ -100,20 +101,3 @@ const Content = (props) => {
 }
 
 export default Content;
-
-const RatingStar = ({ rate }) => {
-  const starQty = Math.floor(rate);
-  const hasStartHalf = (rate - starQty) > 0;
-  const stars = []
-  for (let i = 0; i < starQty; i++) {
-    stars.push(<img key={i} src={icons.star} alt={"star"} className="icon-star" />)
-  }
-  if (hasStartHalf) {
-    stars.push(<img key={"half"} src={icons.startHalf} alt={"star"} className="icon-star" />)
-  }
-  return (
-    <div className="rating-star">
-      {stars}
-    </div>
-  )
-}

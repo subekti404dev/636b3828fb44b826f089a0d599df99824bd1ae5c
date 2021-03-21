@@ -1,10 +1,10 @@
 import React from 'react';
 import './home.css';
-import Header from './header/header';
-import DatePicker from './date-picker/date-picker';
-import ButtonGroup from './button-group/button-group';
 import Content from './content/content';
-import Cart from './cart/cart';
+import ButtonGroup from '../../shared/button-group';
+import DatePicker from '../../shared/date-picker';
+import Cart from '../../shared/cart';
+import Header from '../../shared/header';
 
 const Home = (props) => {
   const [activeSwitchIndex, selectedSwitchIndex] = React.useState(0);
